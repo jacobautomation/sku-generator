@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Batch Complete — SKU Generator</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap');
+  :root{
+    --bg:#1c2028; --panel:#22262f; --panel-2:#2d3242; --border:#343a48;
+    --text:#e6e6e6; --muted:#9aa2b1; --accent:#4664b4; --green:#3cbe78;
+    --mono:'JetBrains Mono',monospace; --sans:'Inter',-apple-system,sans-serif;
+  }
+  *{box-sizing:border-box;}
+  body{ margin:0; background:var(--bg); color:var(--text); font-family:var(--sans); line-height:1.55; }
+  .topbar{ border-bottom:1px solid var(--border); padding:16px 28px; display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:10px; }
+  .topbar-left{ display:flex; align-items:center; gap:12px; }
+  .mark{ width:32px; height:32px; border:1.5px solid var(--accent); border-radius:7px; display:flex; align-items:center; justify-content:center; font-family:var(--mono); font-weight:600; font-size:13px; color:var(--accent); }
+  h1{ font-size:15px; font-weight:600; margin:0; }
+  .sub{ font-size:12.5px; color:var(--muted); margin-top:1px; }
+  .pill{ font-family:var(--mono); font-size:11.5px; color:var(--green); background:rgba(60,190,120,0.12); border:1px solid rgba(60,190,120,0.3); padding:5px 10px; border-radius:20px; }
+  .pill a{ color:inherit; }
+
+  .wrap{ max-width: 1100px; margin:0 auto; padding: 26px 24px 60px; }
+
+  .stat-row{ display:flex; gap:14px; flex-wrap:wrap; margin-bottom:20px; }
+  .stat{ background:var(--panel); border:1px solid var(--border); border-radius:10px; padding:14px 20px; min-width:160px; }
+  .stat .num{ font-family:var(--mono); font-size:24px; font-weight:600; color:var(--accent); }
+  .stat .lbl{ font-size:11.5px; color:var(--muted); margin-top:2px; }
+
+  .success-box{
+    background: rgba(60,190,120,0.1); border:1px solid rgba(60,190,120,0.35); border-radius:10px;
+    padding: 16px 20px; margin-bottom: 20px; display:flex; align-items:center; justify-content:space-between; gap:14px; flex-wrap:wrap;
+  }
+  .success-box .msg{ font-size: 14px; }
+  .success-box .msg strong{ color: var(--green); font-family: var(--mono); }
+  .actions{ display:flex; gap:10px; flex-wrap:wrap; }
+  .btn{ padding:10px 18px; border-radius:8px; font-size:13.5px; font-weight:600; cursor:pointer; border:1px solid var(--border); background:var(--panel-2); color:var(--text); text-decoration:none; display:inline-block; }
+  .btn.primary{ background:var(--accent); border-color:var(--accent); color:#fff; }
+  .btn.primary:hover{ filter:brightness(1.1); }
+  .btn:hover{ border-color:var(--accent); }
+
+  .card{ background:var(--panel); border:1px solid var(--border); border-radius:12px; padding:20px; }
+  .card h2{ font-size:12px; text-transform:uppercase; letter-spacing:0.05em; color:var(--muted); margin:0 0 14px 0; font-weight:600; }
+
+  table{ width:100%; border-collapse:collapse; font-size:12.5px; }
+  thead th{ text-align:left; color:var(--muted); font-size:10.5px; text-transform:uppercase; letter-spacing:0.04em; padding:8px; border-bottom:1px solid var(--border); position:sticky; top:0; background:var(--panel); }
+  tbody td{ padding:8px; border-bottom:1px solid var(--border); vertical-align:top; }
+  tbody td.sku{ font-family:var(--mono); color:var(--accent); white-space:nowrap; }
+  tbody td.desc{ color:var(--muted); max-width:460px; }
+  .table-scroll{ max-height:600px; overflow-y:auto; }
+  .hint{ font-size:11.5px; color:var(--muted); margin-top:10px; }
+</style>
+</head>
+<body>
+
+<div class="topbar">
+  <div class="topbar-left">
+    <div class="mark">SK</div>
+    <div>
+      <h1>SKU &amp; Description Generator</h1>
+      <div class="sub">Batch complete</div>
+    </div>
+  </div>
+  <div class="pill">● {{ request.user.username }} — <a href="{% url 'wizard_history' %}">Batch history</a> · <a href="{% url 'logout' %}">Sign out</a></div>
+</div>
+
+<div class="wrap">
+
+  <div class="stat-row">
+    <div class="stat"><div class="num">{{ total_generated }}</div><div class="lbl">Unique SKUs generated</div></div>
+    {% if gen_ms %}<div class="stat"><div class="num">{{ gen_ms }} ms</div><div class="lbl">Generation time</div></div>{% endif %}
+  </div>
+
+  <div class="success-box">
+    <div class="msg">Batch complete — <strong>{{ total_generated }} unique SKU{{ total_generated|pluralize }}</strong>{% if gen_ms %} generated in {{ gen_ms }} ms{% endif %}.</div>
+    <div class="actions">
+      <a class="btn primary" href="{% url 'export_excel' %}?batch={{ batch_id }}">⬇ Export full batch to Excel</a>
+      <a class="btn" href="{% url 'wizard_reset' %}">Start a new batch</a>
+    </div>
+  </div>
+
+  <div class="card">
+    <h2>Preview</h2>
+    <div class="table-scroll">
+      <table>
+        <thead><tr><th>SKU</th><th>Product</th><th>Description</th><th>Tags</th></tr></thead>
+        <tbody>
+          {% for row in preview %}
+          <tr>
+            <td class="sku">{{ row.sku_code }}</td>
+            <td class="desc">{{ row.product.family_name }}</td>
+            <td class="desc">{{ row.description|linebreaksbr }}</td>
+            <td class="desc">{{ row.tags|default:"—" }}</td>
+          </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+    </div>
+    {% if total_generated > 50 %}
+      <div class="hint">Showing first 50 of {{ total_generated }} rows — export to get the full set.</div>
+    {% endif %}
+  </div>
+
+</div>
+
+</body>
+</html>

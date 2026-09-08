@@ -1,0 +1,1793 @@
+{
+  "lookups": {
+    "driver": [
+      {
+        "code": "F",
+        "label": "Electronic Fixed Output Driver"
+      },
+      {
+        "code": "D",
+        "label": "Electronic DALI Driver"
+      },
+      {
+        "code": "P",
+        "label": "Electronic Phase Dim Driver"
+      },
+      {
+        "code": "W",
+        "label": "Electronic Wireless Driver"
+      },
+      {
+        "code": "M",
+        "label": "Mains Supply (230v)"
+      }
+    ],
+    "cri": [
+      {
+        "code": "7",
+        "label": "CRI70"
+      },
+      {
+        "code": "8",
+        "label": "CRI80"
+      },
+      {
+        "code": "9",
+        "label": "CRI90"
+      }
+    ],
+    "cct": [
+      {
+        "code": "27",
+        "label": "2700K"
+      },
+      {
+        "code": "30",
+        "label": "3000K"
+      },
+      {
+        "code": "35",
+        "label": "3500K"
+      },
+      {
+        "code": "40",
+        "label": "4000K"
+      },
+      {
+        "code": "50",
+        "label": "5000K"
+      },
+      {
+        "code": "60",
+        "label": "6000K"
+      },
+      {
+        "code": "TW",
+        "label": "Tuneable White"
+      },
+      {
+        "code": "DW",
+        "label": "Dim to Warm"
+      },
+      {
+        "code": "FS",
+        "label": "Full Spectrum"
+      },
+      {
+        "code": "RB",
+        "label": "RGB"
+      }
+    ],
+    "beam": [
+      {
+        "code": "NB",
+        "label": "Narrow Beam"
+      },
+      {
+        "code": "MB",
+        "label": "Medium Beam"
+      },
+      {
+        "code": "WB",
+        "label": "Wide Beam"
+      },
+      {
+        "code": "WW",
+        "label": "Wall Wash Beam"
+      },
+      {
+        "code": "DI",
+        "label": "Direct / Indirecty"
+      },
+      {
+        "code": "ID",
+        "label": "Indirect"
+      },
+      {
+        "code": "AS",
+        "label": "Asymmetrical"
+      },
+      {
+        "code": "FL",
+        "label": "Floodlight"
+      },
+      {
+        "code": "1",
+        "label": "1\u00b0  Beam Angle"
+      }
+    ],
+    "body_colour": [
+      {
+        "code": "B1",
+        "label": "Black (RAL9005)"
+      },
+      {
+        "code": "B2",
+        "label": "Brick Red (RAL2002)"
+      },
+      {
+        "code": "B3",
+        "label": "Brown Sepia (RAL8014)"
+      },
+      {
+        "code": "B4",
+        "label": "Brown Terra (RAL8028)"
+      },
+      {
+        "code": "C1",
+        "label": "Copper (RAL8029)"
+      },
+      {
+        "code": "G1",
+        "label": "Gold Pearl (RAL1036)"
+      },
+      {
+        "code": "G2",
+        "label": "Graphite (RAL7024)"
+      },
+      {
+        "code": "G3",
+        "label": "Gray Quartz (RAL7039)"
+      },
+      {
+        "code": "G4",
+        "label": "Gray Silk (RAL7044)"
+      },
+      {
+        "code": "G5",
+        "label": "Grey (RAL9006)"
+      },
+      {
+        "code": "M1",
+        "label": "Marrone (RAL3605)"
+      },
+      {
+        "code": "O1",
+        "label": "Orange Deep (RAL2011)"
+      },
+      {
+        "code": "R1",
+        "label": "Red Traffic (RAL3020)"
+      },
+      {
+        "code": "W1",
+        "label": "White (RAL9010)"
+      },
+      {
+        "code": "W2",
+        "label": "White Brilliant  (RAL9016)"
+      },
+      {
+        "code": "W3",
+        "label": "White Pure (RAL9013)"
+      },
+      {
+        "code": "W4",
+        "label": "White Signal (RAL9003)"
+      }
+    ],
+    "option": [
+      {
+        "code": "3",
+        "label": "3-Core"
+      },
+      {
+        "code": "5",
+        "label": "5-Core"
+      },
+      {
+        "code": "7",
+        "label": "7-Core"
+      }
+    ],
+    "emergency": [
+      {
+        "code": "C",
+        "label": "Central Battery"
+      },
+      {
+        "code": "S",
+        "label": "3hr Standard Emergency Backup"
+      },
+      {
+        "code": "D",
+        "label": "3hr DALI Emergency Backup"
+      },
+      {
+        "code": "T",
+        "label": "3hr Self-Test Emergency Backup"
+      },
+      {
+        "code": "W",
+        "label": "3hr Wireless Emergency Backup"
+      }
+    ],
+    "install_method": [
+      {
+        "code": "SUR",
+        "label": "Surface"
+      },
+      {
+        "code": "SUS",
+        "label": "Suspended"
+      },
+      {
+        "code": "REC",
+        "label": "Recessed"
+      },
+      {
+        "code": "WM",
+        "label": "Wall Mounted"
+      }
+    ],
+    "lamp_type": [
+      {
+        "code": "LED",
+        "label": "LED"
+      },
+      {
+        "code": "NLED",
+        "label": "Non-LED"
+      }
+    ],
+    "light_dist": [
+      {
+        "code": "DI",
+        "label": "Direct"
+      },
+      {
+        "code": "IN",
+        "label": "Indirect"
+      },
+      {
+        "code": "DIIN",
+        "label": "Direct / Indirect"
+      }
+    ],
+    "ip_rating": [
+      {
+        "code": "IP00",
+        "label": "IP00 \u2014 No protection against solids and liquids"
+      },
+      {
+        "code": "IP01",
+        "label": "IP01 \u2014 No protection against solids; protection against dripping water"
+      },
+      {
+        "code": "IP02",
+        "label": "IP02 \u2014 No protection against solids; protection against dripping water when tilted up to 15 degrees"
+      },
+      {
+        "code": "IP03",
+        "label": "IP03 \u2014 No protection against solids; protection against spraying water"
+      },
+      {
+        "code": "IP04",
+        "label": "IP04 \u2014 No protection against solids; protection against splashing water"
+      },
+      {
+        "code": "IP05",
+        "label": "IP05 \u2014 No protection against solids; protection against water jets"
+      },
+      {
+        "code": "IP06",
+        "label": "IP06 \u2014 No protection against solids; protection against powerful water jets"
+      },
+      {
+        "code": "IP07",
+        "label": "IP07 \u2014 No protection against solids; protection against immersion up to 1 meter"
+      },
+      {
+        "code": "IP08",
+        "label": "IP08 \u2014 No protection against solids; protection against continuous immersion beyond 1 meter"
+      },
+      {
+        "code": "IP09",
+        "label": "IP09 \u2014 No protection against solids; protection against high pressure and high temperature water jets"
+      },
+      {
+        "code": "IP10",
+        "label": "IP10 \u2014 Protection against objects larger than 50mm; no protection against liquids"
+      },
+      {
+        "code": "IP11",
+        "label": "IP11 \u2014 Protection against objects larger than 50mm; protection against dripping water"
+      },
+      {
+        "code": "IP12",
+        "label": "IP12 \u2014 Protection against objects larger than 50mm; protection against dripping water when tilted up to 15 degrees"
+      },
+      {
+        "code": "IP13",
+        "label": "IP13 \u2014 Protection against objects larger than 50mm; protection against spraying water"
+      },
+      {
+        "code": "IP14",
+        "label": "IP14 \u2014 Protection against objects larger than 50mm; protection against splashing water"
+      },
+      {
+        "code": "IP15",
+        "label": "IP15 \u2014 Protection against objects larger than 50mm; protection against water jets"
+      },
+      {
+        "code": "IP16",
+        "label": "IP16 \u2014 Protection against objects larger than 50mm; protection against powerful water jets"
+      },
+      {
+        "code": "IP17",
+        "label": "IP17 \u2014 Protection against objects larger than 50mm; protection against immersion up to 1 meter"
+      },
+      {
+        "code": "IP18",
+        "label": "IP18 \u2014 Protection against objects larger than 50mm; protection against continuous immersion beyond 1 meter"
+      },
+      {
+        "code": "IP19",
+        "label": "IP19 \u2014 Protection against objects larger than 50mm; protection against high pressure and high temperature water jets"
+      },
+      {
+        "code": "IP20",
+        "label": "IP20 \u2014 Protection against objects larger than 12.5mm; no protection against liquids"
+      },
+      {
+        "code": "IP21",
+        "label": "IP21 \u2014 Protection against objects larger than 12.5mm; protection against dripping water"
+      },
+      {
+        "code": "IP22",
+        "label": "IP22 \u2014 Protection against objects larger than 12.5mm; protection against dripping water when tilted up to 15 degrees"
+      },
+      {
+        "code": "IP23",
+        "label": "IP23 \u2014 Protection against objects larger than 12.5mm; protection against spraying water"
+      },
+      {
+        "code": "IP24",
+        "label": "IP24 \u2014 Protection against objects larger than 12.5mm; protection against splashing water"
+      },
+      {
+        "code": "IP25",
+        "label": "IP25 \u2014 Protection against objects larger than 12.5mm; protection against water jets"
+      },
+      {
+        "code": "IP27",
+        "label": "IP27 \u2014 Protection against objects larger than 12.5mm; protection against immersion up to 1 meter"
+      },
+      {
+        "code": "IP28",
+        "label": "IP28 \u2014 Protection against objects larger than 12.5mm; protection against continuous immersion beyond 1 meter"
+      },
+      {
+        "code": "IP29",
+        "label": "IP29 \u2014 Protection against objects larger than 12.5mm; protection against high pressure and high temperature water jets"
+      },
+      {
+        "code": "IP30",
+        "label": "IP30 \u2014 Protection against objects larger than 2.5mm; no protection against liquids"
+      },
+      {
+        "code": "IP31",
+        "label": "IP31 \u2014 Protection against objects larger than 2.5mm; protection against dripping water"
+      },
+      {
+        "code": "IP32",
+        "label": "IP32 \u2014 Protection against objects larger than 2.5mm; protection against dripping water when tilted up to 15 degrees"
+      },
+      {
+        "code": "IP33",
+        "label": "IP33 \u2014 Protection against objects larger than 2.5mm; protection against spraying water"
+      },
+      {
+        "code": "IP34",
+        "label": "IP34 \u2014 Protection against objects larger than 2.5mm; protection against splashing water"
+      },
+      {
+        "code": "IP35",
+        "label": "IP35 \u2014 Protection against objects larger than 2.5mm; protection against water jets"
+      },
+      {
+        "code": "IP36",
+        "label": "IP36 \u2014 Protection against objects larger than 2.5mm; protection against powerful water jets"
+      },
+      {
+        "code": "IP37",
+        "label": "IP37 \u2014 Protection against objects larger than 2.5mm; protection against immersion up to 1 meter"
+      },
+      {
+        "code": "IP38",
+        "label": "IP38 \u2014 Protection against objects larger than 2.5mm; protection against continuous immersion beyond 1 meter"
+      },
+      {
+        "code": "IP39",
+        "label": "IP39 \u2014 Protection against objects larger than 2.5mm; protection against high pressure and high temperature water jets"
+      },
+      {
+        "code": "IP40",
+        "label": "IP40 \u2014 Protection against objects larger than 1mm; no protection against liquids"
+      },
+      {
+        "code": "IP41",
+        "label": "IP41 \u2014 Protection against objects larger than 1mm; protection against dripping water"
+      },
+      {
+        "code": "IP42",
+        "label": "IP42 \u2014 Protection against objects larger than 1mm; protection against dripping water when tilted up to 15 degrees"
+      },
+      {
+        "code": "IP43",
+        "label": "IP43 \u2014 Protection against objects larger than 1mm; protection against spraying water"
+      },
+      {
+        "code": "IP44",
+        "label": "IP44 \u2014 Protection against objects larger than 1mm; protection against splashing water"
+      },
+      {
+        "code": "IP45",
+        "label": "IP45 \u2014 Protection against objects larger than 1mm; protection against water jets"
+      },
+      {
+        "code": "IP46",
+        "label": "IP46 \u2014 Protection against objects larger than 1mm; protection against powerful water jets"
+      },
+      {
+        "code": "IP47",
+        "label": "IP47 \u2014 Protection against objects larger than 1mm; protection against immersion up to 1 meter"
+      },
+      {
+        "code": "IP48",
+        "label": "IP48 \u2014 Protection against objects larger than 1mm; protection against continuous immersion beyond 1 meter"
+      },
+      {
+        "code": "IP49",
+        "label": "IP49 \u2014 Protection against objects larger than 1mm; protection against high pressure and high temperature water jets"
+      },
+      {
+        "code": "IP50",
+        "label": "IP50 \u2014 Dust protected; no protection against liquids"
+      },
+      {
+        "code": "IP51",
+        "label": "IP51 \u2014 Dust protected; protection against dripping water"
+      },
+      {
+        "code": "IP52",
+        "label": "IP52 \u2014 Dust protected; protection against dripping water when tilted up to 15 degrees"
+      },
+      {
+        "code": "IP53",
+        "label": "IP53 \u2014 Dust protected; protection against spraying water"
+      },
+      {
+        "code": "IP54",
+        "label": "IP54 \u2014 Dust protected; protection against splashing water"
+      },
+      {
+        "code": "IP55",
+        "label": "IP55 \u2014 Dust protected; protection against water jets"
+      },
+      {
+        "code": "IP56",
+        "label": "IP56 \u2014 Dust protected; protection against powerful water jets"
+      },
+      {
+        "code": "IP57",
+        "label": "IP57 \u2014 Dust protected; protection against immersion up to 1 meter"
+      },
+      {
+        "code": "IP58",
+        "label": "IP58 \u2014 Dust protected; protection against continuous immersion beyond 1 meter"
+      },
+      {
+        "code": "IP59",
+        "label": "IP59 \u2014 Dust protected; protection against high pressure and high temperature water jets"
+      },
+      {
+        "code": "IP60",
+        "label": "IP60 \u2014 Dust tight; no protection against liquids"
+      },
+      {
+        "code": "IP61",
+        "label": "IP61 \u2014 Dust tight; protection against dripping water"
+      },
+      {
+        "code": "IP62",
+        "label": "IP62 \u2014 Dust tight; protection against dripping water when tilted up to 15 degrees"
+      },
+      {
+        "code": "IP63",
+        "label": "IP63 \u2014 Dust tight; protection against spraying water"
+      },
+      {
+        "code": "IP64",
+        "label": "IP64 \u2014 Dust tight; protection against splashing water"
+      },
+      {
+        "code": "IP65",
+        "label": "IP65 \u2014 Dust tight; protection against water jets"
+      },
+      {
+        "code": "IP66",
+        "label": "IP66 \u2014 Dust tight; protection against powerful water jets"
+      },
+      {
+        "code": "IP67",
+        "label": "IP67 \u2014 Dust tight; protection against immersion up to 1 meter"
+      },
+      {
+        "code": "IP68",
+        "label": "IP68 \u2014 Dust tight; protection against continuous immersion beyond 1 meter"
+      },
+      {
+        "code": "IP69",
+        "label": "IP69 \u2014 Dust tight; protection against high pressure and high temperature water jets"
+      }
+    ],
+    "driver_mount": [
+      {
+        "code": "Remote",
+        "label": "Remote"
+      },
+      {
+        "code": "Integral",
+        "label": "Integral"
+      }
+    ]
+  },
+  "products": [
+    {
+      "prefix": "AR1002",
+      "family_name": "Velvet Marble Sconce",
+      "category": "ARCHITECTURAL"
+    },
+    {
+      "prefix": "AR1002",
+      "family_name": "Luminous Bamboo Lantern",
+      "category": "ARCHITECTURAL"
+    },
+    {
+      "prefix": "AR1003",
+      "family_name": "Frosted Iron Spotlight",
+      "category": "ARCHITECTURAL"
+    },
+    {
+      "prefix": "AR1004",
+      "family_name": "Luminous Wood Fixture",
+      "category": "ARCHITECTURAL"
+    },
+    {
+      "prefix": "AR1005",
+      "family_name": "Luminous Brass Light",
+      "category": "ARCHITECTURAL"
+    },
+    {
+      "prefix": "AR1006",
+      "family_name": "Pearl Marble Chandelier",
+      "category": "ARCHITECTURAL"
+    },
+    {
+      "prefix": "AR1007",
+      "family_name": "Dusky Marble Fixture",
+      "category": "ARCHITECTURAL"
+    },
+    {
+      "prefix": "AR1008",
+      "family_name": "Pearl Iron Lamp",
+      "category": "ARCHITECTURAL"
+    },
+    {
+      "prefix": "AR1008",
+      "family_name": "Icy Copper Spotlight",
+      "category": "ARCHITECTURAL"
+    },
+    {
+      "prefix": "AR1009",
+      "family_name": "Dusky Chrome Sconce",
+      "category": "ARCHITECTURAL"
+    },
+    {
+      "prefix": "AR1010",
+      "family_name": "Nova Iron Lamp",
+      "category": "ARCHITECTURAL"
+    },
+    {
+      "prefix": "AR1011",
+      "family_name": "Velvet Stone Fixture",
+      "category": "ARCHITECTURAL"
+    },
+    {
+      "prefix": "AR1011",
+      "family_name": "Frosted Marble Lantern",
+      "category": "ARCHITECTURAL"
+    },
+    {
+      "prefix": "AR1011",
+      "family_name": "Luminous Metal Lamp",
+      "category": "ARCHITECTURAL"
+    },
+    {
+      "prefix": "AS1001",
+      "family_name": "Twilight Wood Light",
+      "category": "ACOUSTIC"
+    },
+    {
+      "prefix": "CR1001",
+      "family_name": "Dusky Brass Lamp",
+      "category": "CLEAN ROOM"
+    },
+    {
+      "prefix": "CR1002",
+      "family_name": "Ambient Iron Fixture",
+      "category": "CLEAN ROOM"
+    },
+    {
+      "prefix": "CR1003",
+      "family_name": "Luminous Marble Sconce",
+      "category": "CLEAN ROOM"
+    },
+    {
+      "prefix": "CR1004",
+      "family_name": "Dusky Metal Spotlight",
+      "category": "CLEAN ROOM"
+    },
+    {
+      "prefix": "CR1005",
+      "family_name": "Icy Iron Fixture",
+      "category": "CLEAN ROOM"
+    },
+    {
+      "prefix": "CR1006",
+      "family_name": "Bright Marble Spotlight",
+      "category": "CLEAN ROOM"
+    },
+    {
+      "prefix": "CR1007",
+      "family_name": "Dusky Iron Fixture",
+      "category": "CLEAN ROOM"
+    },
+    {
+      "prefix": "CR1008",
+      "family_name": "Twilight Copper Chandelier",
+      "category": "CLEAN ROOM"
+    },
+    {
+      "prefix": "CR1008",
+      "family_name": "Ambient Metal Bulb",
+      "category": "CLEAN ROOM"
+    },
+    {
+      "prefix": "CR1009",
+      "family_name": "Icy Stone Light",
+      "category": "CLEAN ROOM"
+    },
+    {
+      "prefix": "DL1028",
+      "family_name": "Bright Iron Light",
+      "category": "DOWNLIGHT"
+    },
+    {
+      "prefix": "DL1029",
+      "family_name": "Bright Brass Chandelier",
+      "category": "DOWNLIGHT"
+    },
+    {
+      "prefix": "DL1030",
+      "family_name": "Icy Marble Light",
+      "category": "DOWNLIGHT"
+    },
+    {
+      "prefix": "DL1031",
+      "family_name": "Bright Brass Lantern",
+      "category": "DOWNLIGHT"
+    },
+    {
+      "prefix": "DL1032",
+      "family_name": "Frosted Marble Light",
+      "category": "DOWNLIGHT"
+    },
+    {
+      "prefix": "DL1033",
+      "family_name": "Velvet Chrome Spotlight",
+      "category": "DOWNLIGHT"
+    },
+    {
+      "prefix": "DL1034",
+      "family_name": "Velvet Copper Bulb",
+      "category": "DOWNLIGHT"
+    },
+    {
+      "prefix": "DL1035",
+      "family_name": "Twilight Copper Spotlight",
+      "category": "DOWNLIGHT"
+    },
+    {
+      "prefix": "DL1036",
+      "family_name": "SoftGlow Brass Sconce",
+      "category": "DOWNLIGHT"
+    },
+    {
+      "prefix": "DL1037",
+      "family_name": "SoftGlow Wood Lantern",
+      "category": "DOWNLIGHT"
+    },
+    {
+      "prefix": "DL1038",
+      "family_name": "Frosted Copper Bulb",
+      "category": "DOWNLIGHT"
+    },
+    {
+      "prefix": "DL1039",
+      "family_name": "Luminous Bamboo Chandelier",
+      "category": "DOWNLIGHT"
+    },
+    {
+      "prefix": "DL1040",
+      "family_name": "Bright Wood Fixture",
+      "category": "DOWNLIGHT"
+    },
+    {
+      "prefix": "DL1041",
+      "family_name": "Luminous Copper Bulb",
+      "category": "DOWNLIGHT"
+    },
+    {
+      "prefix": "DL1042",
+      "family_name": "Golden Brass Chandelier",
+      "category": "DOWNLIGHT"
+    },
+    {
+      "prefix": "DL1043",
+      "family_name": "SoftGlow Bamboo Bulb",
+      "category": "DOWNLIGHT"
+    },
+    {
+      "prefix": "DL1106",
+      "family_name": "Pearl Iron Light",
+      "category": "DOWNLIGHT"
+    },
+    {
+      "prefix": "DL1107",
+      "family_name": "Frosted Wood Spotlight",
+      "category": "DOWNLIGHT"
+    },
+    {
+      "prefix": "DL1108",
+      "family_name": "Ambient Stone Spotlight",
+      "category": "DOWNLIGHT"
+    },
+    {
+      "prefix": "DL1109",
+      "family_name": "Ambient Chrome Spotlight",
+      "category": "DOWNLIGHT"
+    },
+    {
+      "prefix": "DL1110",
+      "family_name": "Nova Chrome Light",
+      "category": "DOWNLIGHT"
+    },
+    {
+      "prefix": "DL1111",
+      "family_name": "Ambient Chrome Fixture",
+      "category": "DOWNLIGHT"
+    },
+    {
+      "prefix": "DL1112",
+      "family_name": "Icy Chrome Fixture",
+      "category": "DOWNLIGHT"
+    },
+    {
+      "prefix": "DL1113",
+      "family_name": "Twilight Bamboo Sconce",
+      "category": "DOWNLIGHT"
+    },
+    {
+      "prefix": "DL1114",
+      "family_name": "Ambient Stone Chandelier",
+      "category": "DOWNLIGHT"
+    },
+    {
+      "prefix": "DL1115",
+      "family_name": "Pearl Chrome Lamp",
+      "category": "DOWNLIGHT"
+    },
+    {
+      "prefix": "DL1116",
+      "family_name": "Twilight Brass Sconce",
+      "category": "DOWNLIGHT"
+    },
+    {
+      "prefix": "DL1117",
+      "family_name": "Frosted Metal Lamp",
+      "category": "DOWNLIGHT"
+    },
+    {
+      "prefix": "DL1118",
+      "family_name": "Twilight Brass Spotlight",
+      "category": "DOWNLIGHT"
+    },
+    {
+      "prefix": "DL1119",
+      "family_name": "Twilight Stone Lantern",
+      "category": "DOWNLIGHT"
+    },
+    {
+      "prefix": "DL1120",
+      "family_name": "Icy Iron Lamp",
+      "category": "DOWNLIGHT"
+    },
+    {
+      "prefix": "DL1121",
+      "family_name": "Pearl Wood Light",
+      "category": "DOWNLIGHT"
+    },
+    {
+      "prefix": "DL1122",
+      "family_name": "Pearl Wood Fixture",
+      "category": "DOWNLIGHT"
+    },
+    {
+      "prefix": "DL1123",
+      "family_name": "Nova Marble Sconce",
+      "category": "DOWNLIGHT"
+    },
+    {
+      "prefix": "DL1124",
+      "family_name": "Bright Brass Fixture",
+      "category": "DOWNLIGHT"
+    },
+    {
+      "prefix": "DL1125",
+      "family_name": "Ambient Copper Light",
+      "category": "DOWNLIGHT"
+    },
+    {
+      "prefix": "DL1126",
+      "family_name": "Nova Metal Lamp",
+      "category": "DOWNLIGHT"
+    },
+    {
+      "prefix": "DL1127",
+      "family_name": "Frosted Marble Spotlight",
+      "category": "DOWNLIGHT"
+    },
+    {
+      "prefix": "DL1128",
+      "family_name": "Bright Marble Lamp",
+      "category": "DOWNLIGHT"
+    },
+    {
+      "prefix": "DL1129",
+      "family_name": "Dusky Brass Light",
+      "category": "DOWNLIGHT"
+    },
+    {
+      "prefix": "DL1131",
+      "family_name": "Velvet Iron Chandelier",
+      "category": "DOWNLIGHT"
+    },
+    {
+      "prefix": "DL1132",
+      "family_name": "Bright Marble Lantern",
+      "category": "DOWNLIGHT"
+    },
+    {
+      "prefix": "FL1001",
+      "family_name": "Icy Marble Spotlight",
+      "category": "FEATURE LIGHT"
+    },
+    {
+      "prefix": "FL1002",
+      "family_name": "Nova Stone Lamp",
+      "category": "FEATURE LIGHT"
+    },
+    {
+      "prefix": "FL1003",
+      "family_name": "Golden Bamboo Spotlight",
+      "category": "FEATURE LIGHT"
+    },
+    {
+      "prefix": "FL1004",
+      "family_name": "Luminous Bamboo Bulb",
+      "category": "FEATURE LIGHT"
+    },
+    {
+      "prefix": "FL1005",
+      "family_name": "Crystal Iron Fixture",
+      "category": "FEATURE LIGHT"
+    },
+    {
+      "prefix": "HC1001",
+      "family_name": "Golden Iron Bulb",
+      "category": "HEALTH CARE"
+    },
+    {
+      "prefix": "HC1002",
+      "family_name": "Nova Brass Spotlight",
+      "category": "HEALTH CARE"
+    },
+    {
+      "prefix": "IN1001",
+      "family_name": "Luminous Iron Lantern",
+      "category": "INDUSTRIAL"
+    },
+    {
+      "prefix": "IN1002",
+      "family_name": "Velvet Metal Chandelier",
+      "category": "INDUSTRIAL"
+    },
+    {
+      "prefix": "IN1003",
+      "family_name": "Pearl Copper Spotlight",
+      "category": "INDUSTRIAL"
+    },
+    {
+      "prefix": "IN1004",
+      "family_name": "Golden Brass Fixture",
+      "category": "INDUSTRIAL"
+    },
+    {
+      "prefix": "IN1006",
+      "family_name": "Ambient Stone Lamp",
+      "category": "INDUSTRIAL"
+    },
+    {
+      "prefix": "IN1007",
+      "family_name": "Nova Chrome Lantern",
+      "category": "INDUSTRIAL"
+    },
+    {
+      "prefix": "IN1008",
+      "family_name": "Golden Chrome Chandelier",
+      "category": "INDUSTRIAL"
+    },
+    {
+      "prefix": "IN1009",
+      "family_name": "Luminous Iron Bulb",
+      "category": "INDUSTRIAL"
+    },
+    {
+      "prefix": "IN1010",
+      "family_name": "Golden Marble Lamp",
+      "category": "INDUSTRIAL"
+    },
+    {
+      "prefix": "IN1011",
+      "family_name": "Pearl Marble Bulb",
+      "category": "INDUSTRIAL"
+    },
+    {
+      "prefix": "IN1012",
+      "family_name": "Pearl Metal Lantern",
+      "category": "INDUSTRIAL"
+    },
+    {
+      "prefix": "IN1013",
+      "family_name": "Nova Marble Lamp",
+      "category": "INDUSTRIAL"
+    },
+    {
+      "prefix": "IN1014",
+      "family_name": "Icy Wood Lantern",
+      "category": "INDUSTRIAL"
+    },
+    {
+      "prefix": "IN1015",
+      "family_name": "Ambient Bamboo Lantern",
+      "category": "INDUSTRIAL"
+    },
+    {
+      "prefix": "IN1016",
+      "family_name": "Luminous Copper Chandelier",
+      "category": "INDUSTRIAL"
+    },
+    {
+      "prefix": "IN1016",
+      "family_name": "Velvet Wood Lantern",
+      "category": "INDUSTRIAL"
+    },
+    {
+      "prefix": "IN1017",
+      "family_name": "Frosted Stone Fixture",
+      "category": "INDUSTRIAL"
+    },
+    {
+      "prefix": "IN1017",
+      "family_name": "Icy Iron Lantern",
+      "category": "INDUSTRIAL"
+    },
+    {
+      "prefix": "IN1018",
+      "family_name": "Nova Brass Bulb",
+      "category": "INDUSTRIAL"
+    },
+    {
+      "prefix": "IN1018",
+      "family_name": "Frosted Copper Lantern",
+      "category": "INDUSTRIAL"
+    },
+    {
+      "prefix": "IN1019",
+      "family_name": "Luminous Chrome Chandelier",
+      "category": "INDUSTRIAL"
+    },
+    {
+      "prefix": "IN1020",
+      "family_name": "Crystal Copper Sconce",
+      "category": "INDUSTRIAL"
+    },
+    {
+      "prefix": "IN1021",
+      "family_name": "Golden Chrome Lantern",
+      "category": "INDUSTRIAL"
+    },
+    {
+      "prefix": "IN1021",
+      "family_name": "Crystal Copper Chandelier",
+      "category": "INDUSTRIAL"
+    },
+    {
+      "prefix": "LS1001",
+      "family_name": "Luminous Metal Fixture",
+      "category": "LIGHTING SYSTEM"
+    },
+    {
+      "prefix": "LS1002",
+      "family_name": "Luminous Bamboo Fixture",
+      "category": "LIGHTING SYSTEM"
+    },
+    {
+      "prefix": "LS1003",
+      "family_name": "Dusky Iron Bulb",
+      "category": "LIGHTING SYSTEM"
+    },
+    {
+      "prefix": "LS1004",
+      "family_name": "Nova Chrome Bulb",
+      "category": "LIGHTING SYSTEM"
+    },
+    {
+      "prefix": "LS1005",
+      "family_name": "Crystal Bamboo Bulb",
+      "category": "LIGHTING SYSTEM"
+    },
+    {
+      "prefix": "LS1005",
+      "family_name": "Ambient Marble Lamp",
+      "category": "LIGHTING SYSTEM"
+    },
+    {
+      "prefix": "LS1006",
+      "family_name": "Bright Bamboo Light",
+      "category": "LIGHTING SYSTEM"
+    },
+    {
+      "prefix": "LS1006",
+      "family_name": "Luminous Brass Chandelier",
+      "category": "LIGHTING SYSTEM"
+    },
+    {
+      "prefix": "LS1008",
+      "family_name": "Luminous Chrome Lamp",
+      "category": "LIGHTING SYSTEM"
+    },
+    {
+      "prefix": "LS1008",
+      "family_name": "Pearl Copper Lantern",
+      "category": "LIGHTING SYSTEM"
+    },
+    {
+      "prefix": "LS1008",
+      "family_name": "SoftGlow Copper Light",
+      "category": "LIGHTING SYSTEM"
+    },
+    {
+      "prefix": "LS1010",
+      "family_name": "Nova Brass Lamp",
+      "category": "LIGHTING SYSTEM"
+    },
+    {
+      "prefix": "LS1011",
+      "family_name": "Ambient Marble Bulb",
+      "category": "LIGHTING SYSTEM"
+    },
+    {
+      "prefix": "LS1012",
+      "family_name": "Icy Brass Fixture",
+      "category": "LIGHTING SYSTEM"
+    },
+    {
+      "prefix": "LS1013",
+      "family_name": "Golden Stone Chandelier",
+      "category": "LIGHTING SYSTEM"
+    },
+    {
+      "prefix": "LS1014",
+      "family_name": "Luminous Chrome Lantern",
+      "category": "LIGHTING SYSTEM"
+    },
+    {
+      "prefix": "LS1015",
+      "family_name": "Luminous Stone Chandelier",
+      "category": "LIGHTING SYSTEM"
+    },
+    {
+      "prefix": "LS1016",
+      "family_name": "Golden Metal Lantern",
+      "category": "LIGHTING SYSTEM"
+    },
+    {
+      "prefix": "LS1017",
+      "family_name": "Nova Brass Lantern",
+      "category": "LIGHTING SYSTEM"
+    },
+    {
+      "prefix": "LS1017",
+      "family_name": "Twilight Metal Fixture",
+      "category": "LIGHTING SYSTEM"
+    },
+    {
+      "prefix": "LS1017",
+      "family_name": "Golden Metal Lamp",
+      "category": "LIGHTING SYSTEM"
+    },
+    {
+      "prefix": "LS1017",
+      "family_name": "Bright Stone Bulb",
+      "category": "LIGHTING SYSTEM"
+    },
+    {
+      "prefix": "LS1018",
+      "family_name": "Frosted Chrome Sconce",
+      "category": "LIGHTING SYSTEM"
+    },
+    {
+      "prefix": "LS1019",
+      "family_name": "SoftGlow Brass Fixture",
+      "category": "LIGHTING SYSTEM"
+    },
+    {
+      "prefix": "LS1020",
+      "family_name": "Pearl Iron Spotlight",
+      "category": "LIGHTING SYSTEM"
+    },
+    {
+      "prefix": "LS1021",
+      "family_name": "SoftGlow Metal Sconce",
+      "category": "LIGHTING SYSTEM"
+    },
+    {
+      "prefix": "LS1021",
+      "family_name": "Ambient Bamboo Lamp",
+      "category": "LIGHTING SYSTEM"
+    },
+    {
+      "prefix": "LS1021",
+      "family_name": "Icy Chrome Bulb",
+      "category": "LIGHTING SYSTEM"
+    },
+    {
+      "prefix": "LS1021",
+      "family_name": "Luminous Wood Sconce",
+      "category": "LIGHTING SYSTEM"
+    },
+    {
+      "prefix": "LS1021",
+      "family_name": "Bright Iron Bulb",
+      "category": "LIGHTING SYSTEM"
+    },
+    {
+      "prefix": "LS1022",
+      "family_name": "Crystal Brass Fixture",
+      "category": "LIGHTING SYSTEM"
+    },
+    {
+      "prefix": "LS1023",
+      "family_name": "Frosted Iron Lamp",
+      "category": "LIGHTING SYSTEM"
+    },
+    {
+      "prefix": "LS1024",
+      "family_name": "SoftGlow Bamboo Light",
+      "category": "LIGHTING SYSTEM"
+    },
+    {
+      "prefix": "LS1025",
+      "family_name": "Golden Chrome Lamp",
+      "category": "LIGHTING SYSTEM"
+    },
+    {
+      "prefix": "LS1026",
+      "family_name": "Bright Wood Light",
+      "category": "LIGHTING SYSTEM"
+    },
+    {
+      "prefix": "LS1027",
+      "family_name": "Golden Bamboo Chandelier",
+      "category": "LIGHTING SYSTEM"
+    },
+    {
+      "prefix": "LS1028",
+      "family_name": "Twilight Chrome Lamp",
+      "category": "LIGHTING SYSTEM"
+    },
+    {
+      "prefix": "LS1029",
+      "family_name": "Twilight Brass Lamp",
+      "category": "LIGHTING SYSTEM"
+    },
+    {
+      "prefix": "LS1030",
+      "family_name": "Icy Metal Spotlight",
+      "category": "LIGHTING SYSTEM"
+    },
+    {
+      "prefix": "LS1031",
+      "family_name": "Frosted Stone Chandelier",
+      "category": "LIGHTING SYSTEM"
+    },
+    {
+      "prefix": "LS1032",
+      "family_name": "Golden Wood Spotlight",
+      "category": "LIGHTING SYSTEM"
+    },
+    {
+      "prefix": "LS1033",
+      "family_name": "Crystal Iron Chandelier",
+      "category": "LIGHTING SYSTEM"
+    },
+    {
+      "prefix": "LS1034",
+      "family_name": "Frosted Stone Lantern",
+      "category": "LIGHTING SYSTEM"
+    },
+    {
+      "prefix": "LS1035",
+      "family_name": "Velvet Stone Light",
+      "category": "LIGHTING SYSTEM"
+    },
+    {
+      "prefix": "LS1036",
+      "family_name": "Bright Stone Lamp",
+      "category": "LIGHTING SYSTEM"
+    },
+    {
+      "prefix": "LS1037",
+      "family_name": "Luminous Marble Fixture",
+      "category": "LIGHTING SYSTEM"
+    },
+    {
+      "prefix": "LS1038",
+      "family_name": "Luminous Copper Fixture",
+      "category": "LIGHTING SYSTEM"
+    },
+    {
+      "prefix": "LS1038",
+      "family_name": "Frosted Marble Lamp",
+      "category": "LIGHTING SYSTEM"
+    },
+    {
+      "prefix": "LS1038",
+      "family_name": "SoftGlow Stone Fixture",
+      "category": "LIGHTING SYSTEM"
+    },
+    {
+      "prefix": "LS1039",
+      "family_name": "Pearl Chrome Bulb",
+      "category": "LIGHTING SYSTEM"
+    },
+    {
+      "prefix": "LS1040",
+      "family_name": "Frosted Marble Fixture",
+      "category": "LIGHTING SYSTEM"
+    },
+    {
+      "prefix": "LS1041",
+      "family_name": "Velvet Metal Light",
+      "category": "LIGHTING SYSTEM"
+    },
+    {
+      "prefix": "LS1042",
+      "family_name": "Golden Metal Bulb",
+      "category": "LIGHTING SYSTEM"
+    },
+    {
+      "prefix": "LS1043",
+      "family_name": "SoftGlow Bamboo Spotlight",
+      "category": "LIGHTING SYSTEM"
+    },
+    {
+      "prefix": "LS1044",
+      "family_name": "Golden Copper Spotlight",
+      "category": "LIGHTING SYSTEM"
+    },
+    {
+      "prefix": "LS1045",
+      "family_name": "Velvet Copper Light",
+      "category": "LIGHTING SYSTEM"
+    },
+    {
+      "prefix": "LS1046",
+      "family_name": "Luminous Stone Bulb",
+      "category": "LIGHTING SYSTEM"
+    },
+    {
+      "prefix": "LS1047",
+      "family_name": "Crystal Iron Light",
+      "category": "LIGHTING SYSTEM"
+    },
+    {
+      "prefix": "PL1005",
+      "family_name": "Frosted Stone Spotlight",
+      "category": "PENDANT LIGHT"
+    },
+    {
+      "prefix": "PL1006",
+      "family_name": "Velvet Bamboo Bulb",
+      "category": "PENDANT LIGHT"
+    },
+    {
+      "prefix": "SC1004",
+      "family_name": "Velvet Marble Spotlight",
+      "category": "SUSPENDED CEILING"
+    },
+    {
+      "prefix": "SC1005",
+      "family_name": "Frosted Brass Lantern",
+      "category": "SUSPENDED CEILING"
+    },
+    {
+      "prefix": "SC1006",
+      "family_name": "Ambient Iron Bulb",
+      "category": "SUSPENDED CEILING"
+    },
+    {
+      "prefix": "SC1007",
+      "family_name": "Velvet Bamboo Lantern",
+      "category": "SUSPENDED CEILING"
+    },
+    {
+      "prefix": "SC1007",
+      "family_name": "Velvet Wood Bulb",
+      "category": "SUSPENDED CEILING"
+    },
+    {
+      "prefix": "SC1007",
+      "family_name": "Twilight Marble Chandelier",
+      "category": "SUSPENDED CEILING"
+    },
+    {
+      "prefix": "SC1008",
+      "family_name": "Luminous Copper Lamp",
+      "category": "SUSPENDED CEILING"
+    },
+    {
+      "prefix": "SC1009",
+      "family_name": "Dusky Metal Light",
+      "category": "SUSPENDED CEILING"
+    },
+    {
+      "prefix": "SC1010",
+      "family_name": "Ambient Marble Lantern",
+      "category": "SUSPENDED CEILING"
+    },
+    {
+      "prefix": "SC1011",
+      "family_name": "Icy Bamboo Spotlight",
+      "category": "SUSPENDED CEILING"
+    },
+    {
+      "prefix": "SC1011",
+      "family_name": "Golden Copper Lamp",
+      "category": "SUSPENDED CEILING"
+    },
+    {
+      "prefix": "SC1011",
+      "family_name": "Dusky Stone Lamp",
+      "category": "SUSPENDED CEILING"
+    },
+    {
+      "prefix": "SC1012",
+      "family_name": "Icy Metal Light",
+      "category": "SUSPENDED CEILING"
+    },
+    {
+      "prefix": "SC1012",
+      "family_name": "Icy Iron Sconce",
+      "category": "SUSPENDED CEILING"
+    },
+    {
+      "prefix": "SC1012",
+      "family_name": "Velvet Chrome Fixture",
+      "category": "SUSPENDED CEILING"
+    },
+    {
+      "prefix": "SC1012",
+      "family_name": "Dusky Bamboo Spotlight",
+      "category": "SUSPENDED CEILING"
+    },
+    {
+      "prefix": "SC1013",
+      "family_name": "Icy Bamboo Fixture",
+      "category": "SUSPENDED CEILING"
+    },
+    {
+      "prefix": "SC1014",
+      "family_name": "Ambient Brass Lamp",
+      "category": "SUSPENDED CEILING"
+    },
+    {
+      "prefix": "SC1014",
+      "family_name": "Dusky Marble Sconce",
+      "category": "SUSPENDED CEILING"
+    },
+    {
+      "prefix": "SC1014",
+      "family_name": "SoftGlow Marble Light",
+      "category": "SUSPENDED CEILING"
+    },
+    {
+      "prefix": "SC1015",
+      "family_name": "Golden Metal Light",
+      "category": "SUSPENDED CEILING"
+    },
+    {
+      "prefix": "SC1016",
+      "family_name": "Bright Copper Sconce",
+      "category": "SUSPENDED CEILING"
+    },
+    {
+      "prefix": "SC1017",
+      "family_name": "Ambient Metal Light",
+      "category": "SUSPENDED CEILING"
+    },
+    {
+      "prefix": "SC1018",
+      "family_name": "Crystal Marble Bulb",
+      "category": "SUSPENDED CEILING"
+    },
+    {
+      "prefix": "SC1019",
+      "family_name": "Ambient Brass Light",
+      "category": "SUSPENDED CEILING"
+    },
+    {
+      "prefix": "SC1020",
+      "family_name": "Frosted Brass Lamp",
+      "category": "SUSPENDED CEILING"
+    },
+    {
+      "prefix": "SC1021",
+      "family_name": "Icy Brass Sconce",
+      "category": "SUSPENDED CEILING"
+    },
+    {
+      "prefix": "SC1022",
+      "family_name": "Velvet Marble Light",
+      "category": "SUSPENDED CEILING"
+    },
+    {
+      "prefix": "SC1023",
+      "family_name": "Luminous Marble Light",
+      "category": "SUSPENDED CEILING"
+    },
+    {
+      "prefix": "SC1024",
+      "family_name": "Golden Iron Spotlight",
+      "category": "SUSPENDED CEILING"
+    },
+    {
+      "prefix": "SC1025",
+      "family_name": "Velvet Marble Fixture",
+      "category": "SUSPENDED CEILING"
+    },
+    {
+      "prefix": "SC1026",
+      "family_name": "Nova Bamboo Spotlight",
+      "category": "SUSPENDED CEILING"
+    },
+    {
+      "prefix": "SC1027",
+      "family_name": "SoftGlow Metal Chandelier",
+      "category": "SUSPENDED CEILING"
+    },
+    {
+      "prefix": "SC1028",
+      "family_name": "Velvet Chrome Lamp",
+      "category": "SUSPENDED CEILING"
+    },
+    {
+      "prefix": "SC1029",
+      "family_name": "Dusky Stone Spotlight",
+      "category": "SUSPENDED CEILING"
+    },
+    {
+      "prefix": "SC1030",
+      "family_name": "Icy Bamboo Lantern",
+      "category": "SUSPENDED CEILING"
+    },
+    {
+      "prefix": "SC1031",
+      "family_name": "Ambient Bamboo Chandelier",
+      "category": "SUSPENDED CEILING"
+    },
+    {
+      "prefix": "SC1032",
+      "family_name": "Crystal Iron Sconce",
+      "category": "SUSPENDED CEILING"
+    },
+    {
+      "prefix": "SC1033",
+      "family_name": "Dusky Brass Spotlight",
+      "category": "SUSPENDED CEILING"
+    },
+    {
+      "prefix": "TS1008",
+      "family_name": "Icy Copper Lantern",
+      "category": "TRACK & SPOT"
+    },
+    {
+      "prefix": "TS1009",
+      "family_name": "Twilight Chrome Lantern",
+      "category": "TRACK & SPOT"
+    },
+    {
+      "prefix": "TS1010",
+      "family_name": "SoftGlow Metal Lamp",
+      "category": "TRACK & SPOT"
+    },
+    {
+      "prefix": "TS1011",
+      "family_name": "Velvet Stone Lamp",
+      "category": "TRACK & SPOT"
+    },
+    {
+      "prefix": "WL1001",
+      "family_name": "Icy Brass Spotlight",
+      "category": "WALL LIGHT"
+    },
+    {
+      "prefix": "WL1002",
+      "family_name": "Luminous Metal Chandelier",
+      "category": "WALL LIGHT"
+    },
+    {
+      "prefix": "WL1003",
+      "family_name": "Luminous Stone Fixture",
+      "category": "WALL LIGHT"
+    },
+    {
+      "prefix": "WL1004",
+      "family_name": "Velvet Brass Light",
+      "category": "WALL LIGHT"
+    },
+    {
+      "prefix": "WL1005",
+      "family_name": "Frosted Brass Light",
+      "category": "WALL LIGHT"
+    },
+    {
+      "prefix": "WL1006",
+      "family_name": "Pearl Iron Fixture",
+      "category": "WALL LIGHT"
+    },
+    {
+      "prefix": "WL1007",
+      "family_name": "Bright Marble Bulb",
+      "category": "WALL LIGHT"
+    },
+    {
+      "prefix": "WL1008",
+      "family_name": "Golden Bamboo Light",
+      "category": "WALL LIGHT"
+    },
+    {
+      "prefix": "WL1009",
+      "family_name": "Bright Copper Lantern",
+      "category": "WALL LIGHT"
+    },
+    {
+      "prefix": "WL1010",
+      "family_name": "Dusky Iron Lantern",
+      "category": "WALL LIGHT"
+    },
+    {
+      "prefix": "WL1011",
+      "family_name": "Crystal Wood Lantern",
+      "category": "WALL LIGHT"
+    },
+    {
+      "prefix": "WL1012",
+      "family_name": "Dusky Stone Bulb",
+      "category": "WALL LIGHT"
+    },
+    {
+      "prefix": "WL1013",
+      "family_name": "Luminous Stone Sconce",
+      "category": "WALL LIGHT"
+    },
+    {
+      "prefix": "WL1014",
+      "family_name": "Twilight Stone Fixture",
+      "category": "WALL LIGHT"
+    },
+    {
+      "prefix": "WL1015",
+      "family_name": "Nova Iron Light",
+      "category": "WALL LIGHT"
+    },
+    {
+      "prefix": "WL1016",
+      "family_name": "Bright Chrome Spotlight",
+      "category": "WALL LIGHT"
+    },
+    {
+      "prefix": "WL1017",
+      "family_name": "Icy Metal Sconce",
+      "category": "WALL LIGHT"
+    },
+    {
+      "prefix": "WL1018",
+      "family_name": "Bright Wood Lantern",
+      "category": "WALL LIGHT"
+    },
+    {
+      "prefix": "WL1019",
+      "family_name": "Dusky Stone Sconce",
+      "category": "WALL LIGHT"
+    },
+    {
+      "prefix": "WL1020",
+      "family_name": "Ambient Metal Spotlight",
+      "category": "WALL LIGHT"
+    },
+    {
+      "prefix": "WL1021",
+      "family_name": "Pearl Marble Lamp",
+      "category": "WALL LIGHT"
+    },
+    {
+      "prefix": "WL1022",
+      "family_name": "Icy Copper Fixture",
+      "category": "WALL LIGHT"
+    },
+    {
+      "prefix": "WL1023",
+      "family_name": "Dusky Stone Light",
+      "category": "WALL LIGHT"
+    },
+    {
+      "prefix": "WL1024",
+      "family_name": "Ambient Iron Lamp",
+      "category": "WALL LIGHT"
+    },
+    {
+      "prefix": "WL1025",
+      "family_name": "SoftGlow Marble Spotlight",
+      "category": "WALL LIGHT"
+    },
+    {
+      "prefix": "WL1026",
+      "family_name": "Crystal Stone Light",
+      "category": "WALL LIGHT"
+    },
+    {
+      "prefix": "WL1027",
+      "family_name": "Luminous Wood Light",
+      "category": "WALL LIGHT"
+    },
+    {
+      "prefix": "WL1028",
+      "family_name": "Ambient Wood Sconce",
+      "category": "WALL LIGHT"
+    },
+    {
+      "prefix": "WL1029",
+      "family_name": "Icy Iron Chandelier",
+      "category": "WALL LIGHT"
+    },
+    {
+      "prefix": "WL1030",
+      "family_name": "Ambient Copper Sconce",
+      "category": "WALL LIGHT"
+    },
+    {
+      "prefix": "WL1030",
+      "family_name": "SoftGlow Metal Spotlight",
+      "category": "WALL LIGHT"
+    },
+    {
+      "prefix": "WL1031",
+      "family_name": "Nova Bamboo Lamp",
+      "category": "WALL LIGHT"
+    },
+    {
+      "prefix": "WL1032",
+      "family_name": "Crystal Stone Fixture",
+      "category": "WALL LIGHT"
+    },
+    {
+      "prefix": "WL1033",
+      "family_name": "Velvet Chrome Sconce",
+      "category": "WALL LIGHT"
+    },
+    {
+      "prefix": "WL1033",
+      "family_name": "Crystal Metal Fixture",
+      "category": "WALL LIGHT"
+    },
+    {
+      "prefix": "WL1034",
+      "family_name": "Dusky Copper Spotlight",
+      "category": "WALL LIGHT"
+    },
+    {
+      "prefix": "WL1035",
+      "family_name": "Icy Marble Sconce",
+      "category": "WALL LIGHT"
+    },
+    {
+      "prefix": "XB1005",
+      "family_name": "Icy Wood Chandelier",
+      "category": "EXTERIOR BOLLARD"
+    },
+    {
+      "prefix": "XB1006",
+      "family_name": "Frosted Metal Sconce",
+      "category": "EXTERIOR BOLLARD"
+    },
+    {
+      "prefix": "XB1007",
+      "family_name": "Icy Bamboo Chandelier",
+      "category": "EXTERIOR BOLLARD"
+    },
+    {
+      "prefix": "XB1008",
+      "family_name": "Twilight Stone Light",
+      "category": "EXTERIOR BOLLARD"
+    },
+    {
+      "prefix": "XB1009",
+      "family_name": "Dusky Copper Lamp",
+      "category": "EXTERIOR BOLLARD"
+    },
+    {
+      "prefix": "XB1009",
+      "family_name": "Icy Chrome Lantern",
+      "category": "EXTERIOR BOLLARD"
+    },
+    {
+      "prefix": "XL1001",
+      "family_name": "Luminous Brass Lantern",
+      "category": "EXTERIOR LINEAR"
+    },
+    {
+      "prefix": "XP1001",
+      "family_name": "Twilight Metal Spotlight",
+      "category": "EXTERIOR POST TOP"
+    },
+    {
+      "prefix": "XP1002",
+      "family_name": "Golden Bamboo Lamp",
+      "category": "EXTERIOR POST TOP"
+    }
+  ]
+}

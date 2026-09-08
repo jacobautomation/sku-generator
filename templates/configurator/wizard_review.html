@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Review & Generate — SKU Generator</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap');
+  :root{
+    --bg:#1c2028; --panel:#22262f; --panel-2:#2d3242; --border:#343a48;
+    --text:#e6e6e6; --muted:#9aa2b1; --accent:#4664b4; --green:#3cbe78; --amber:#d4a03c; --red:#e08a7a;
+    --mono:'JetBrains Mono',monospace; --sans:'Inter',-apple-system,sans-serif;
+  }
+  *{box-sizing:border-box;}
+  body{ margin:0; background:var(--bg); color:var(--text); font-family:var(--sans); line-height:1.55; }
+  .topbar{ border-bottom:1px solid var(--border); padding:16px 28px; display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:10px; }
+  .topbar-left{ display:flex; align-items:center; gap:12px; }
+  .mark{ width:32px; height:32px; border:1.5px solid var(--accent); border-radius:7px; display:flex; align-items:center; justify-content:center; font-family:var(--mono); font-weight:600; font-size:13px; color:var(--accent); }
+  h1{ font-size:15px; font-weight:600; margin:0; }
+  .sub{ font-size:12.5px; color:var(--muted); margin-top:1px; }
+  .pill{ font-family:var(--mono); font-size:11.5px; color:var(--green); background:rgba(60,190,120,0.12); border:1px solid rgba(60,190,120,0.3); padding:5px 10px; border-radius:20px; }
+  .pill a{ color:inherit; }
+
+  .wrap{ max-width: 680px; margin:0 auto; padding: 40px 24px 60px; }
+
+  .card{ background:var(--panel); border:1px solid var(--border); border-radius:12px; padding:28px; text-align:center; }
+  .card h2{ font-size:18px; margin:0 0 8px 0; font-weight:600; }
+  .card .desc{ font-size:13px; color:var(--muted); margin-bottom:24px; }
+
+  .total-display{ margin: 10px 0 24px 0; }
+  .total-display .big-num{ font-family:var(--mono); font-size:44px; font-weight:700; }
+  .total-display .big-num.tier-ok{ color: var(--green); }
+  .total-display .big-num.tier-warn{ color: var(--amber); }
+  .total-display .big-num.tier-hot{ color: var(--red); }
+  .total-display .lbl{ font-size:12px; color:var(--muted); margin-top:4px; }
+  .est-time{ font-family: var(--mono); font-size: 13px; color: var(--muted); margin-top: 8px; }
+
+  .warn-box{
+    text-align:left; font-size:12.5px; border-radius:10px; padding:14px 16px; margin-bottom:22px;
+  }
+  .warn-box.tier-warn{ background: rgba(212,160,60,0.1); border:1px solid rgba(212,160,60,0.35); color: var(--amber); }
+  .warn-box.tier-hot{ background: rgba(224,138,122,0.1); border:1px solid rgba(224,138,122,0.35); color: var(--red); }
+
+  .breakdown{ text-align:left; background:var(--panel-2); border:1px solid var(--border); border-radius:10px; padding:16px 18px; margin-bottom:24px; }
+  .breakdown-row{ display:flex; justify-content:space-between; font-size:12.5px; padding:4px 0; }
+  .breakdown-row span:first-child{ color: var(--muted); }
+  .breakdown-row span:last-child{ font-family: var(--mono); }
+
+  .actions{ display:flex; gap:10px; justify-content:center; flex-wrap:wrap; }
+  .btn{ padding:12px 22px; border-radius:8px; font-size:14px; font-weight:600; cursor:pointer; border:1px solid var(--border); background:var(--panel-2); color:var(--text); text-decoration:none; display:inline-block; }
+  .btn.primary{ background:var(--accent); border-color:var(--accent); color:#fff; }
+  .btn.primary:hover{ filter:brightness(1.1); }
+  .btn:hover{ border-color:var(--accent); }
+</style>
+</head>
+<body>
+
+<div class="topbar">
+  <div class="topbar-left">
+    <div class="mark">SK</div>
+    <div>
+      <h1>SKU &amp; Description Generator</h1>
+      <div class="sub">Review before generating</div>
+    </div>
+  </div>
+  <div class="pill">● {{ request.user.username }} — <a href="{% url 'wizard_history' %}">Batch history</a> · <a href="{% url 'logout' %}">Sign out</a></div>
+</div>
+
+<div class="wrap">
+  <div class="card">
+    <h2>Ready to generate</h2>
+    <div class="desc">This is exactly what will be written to the database — check the numbers before you commit.</div>
+
+    <div class="total-display">
+      <div class="big-num {% if total > 200000 %}tier-hot{% elif total > 20000 %}tier-warn{% else %}tier-ok{% endif %}">{{ total|floatformat:0 }}</div>
+      <div class="lbl">unique SKU + description rows</div>
+      <div class="est-time">Estimated generation time: ~{{ estimated_seconds }}s</div>
+    </div>
+
+    {% if total > 200000 %}
+      <div class="warn-box tier-hot">
+        <strong>This is a very large batch.</strong> No limit is enforced — it will run to completion — but at this size it may take several minutes and hold the server while it works. Consider narrowing your selection if this was accidental (e.g. you clicked "Select all" on more than one field).
+      </div>
+    {% elif total > 20000 %}
+      <div class="warn-box tier-warn">
+        This is a large batch and may take a little while to generate and export. Still well within what the app can handle.
+      </div>
+    {% endif %}
+
+    <div class="breakdown">
+      {% for label, count in counts.items %}
+        <div class="breakdown-row"><span>{{ label }}</span><span>{% if count %}{{ count }} selected{% else %}none{% endif %}</span></div>
+      {% endfor %}
+      <div class="breakdown-row"><span>Tags</span><span>{{ tags_display }}</span></div>
+    </div>
+
+    <div class="actions">
+      <a class="btn" href="{% url 'wizard_step' step=11 %}">← Back and adjust</a>
+      <form method="post" style="display:inline;">
+        {% csrf_token %}
+        <button type="submit" class="btn primary">Generate {{ total|floatformat:0 }} SKUs</button>
+      </form>
+    </div>
+  </div>
+</div>
+
+</body>
+</html>

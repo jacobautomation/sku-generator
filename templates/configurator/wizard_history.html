@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Batch History — SKU Generator</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap');
+  :root{
+    --bg:#1c2028; --panel:#22262f; --panel-2:#2d3242; --border:#343a48;
+    --text:#e6e6e6; --muted:#9aa2b1; --accent:#4664b4; --green:#3cbe78;
+    --mono:'JetBrains Mono',monospace; --sans:'Inter',-apple-system,sans-serif;
+  }
+  *{box-sizing:border-box;}
+  body{ margin:0; background:var(--bg); color:var(--text); font-family:var(--sans); line-height:1.55; }
+  .topbar{ border-bottom:1px solid var(--border); padding:16px 28px; display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:10px; }
+  .topbar-left{ display:flex; align-items:center; gap:12px; }
+  .mark{ width:32px; height:32px; border:1.5px solid var(--accent); border-radius:7px; display:flex; align-items:center; justify-content:center; font-family:var(--mono); font-weight:600; font-size:13px; color:var(--accent); }
+  h1{ font-size:15px; font-weight:600; margin:0; }
+  .sub{ font-size:12.5px; color:var(--muted); margin-top:1px; }
+  .pill{ font-family:var(--mono); font-size:11.5px; color:var(--green); background:rgba(60,190,120,0.12); border:1px solid rgba(60,190,120,0.3); padding:5px 10px; border-radius:20px; }
+  .pill a{ color:inherit; }
+
+  .wrap{ max-width: 980px; margin:0 auto; padding: 26px 24px 60px; }
+  .header-row{ display:flex; justify-content:space-between; align-items:center; margin-bottom:18px; }
+  .header-row h2{ font-size:18px; margin:0; }
+  .btn{ padding:9px 16px; border-radius:8px; font-size:13px; font-weight:600; cursor:pointer; border:1px solid var(--border); background:var(--panel-2); color:var(--text); text-decoration:none; display:inline-block; }
+  .btn.primary{ background:var(--accent); border-color:var(--accent); color:#fff; }
+  .btn:hover{ border-color:var(--accent); }
+
+  table{ width:100%; border-collapse:collapse; font-size:13px; background:var(--panel); border:1px solid var(--border); border-radius:12px; overflow:hidden; }
+  thead th{ text-align:left; color:var(--muted); font-size:11px; text-transform:uppercase; letter-spacing:0.04em; padding:12px 14px; border-bottom:1px solid var(--border); background: var(--panel-2); }
+  tbody td{ padding:12px 14px; border-bottom:1px solid var(--border); vertical-align:middle; }
+  tbody tr:last-child td{ border-bottom:none; }
+  td.batch{ font-family:var(--mono); color:var(--accent); font-size:11.5px; }
+  td.count{ font-family:var(--mono); font-weight:600; }
+  td.date{ color:var(--muted); font-size:12px; }
+  .row-actions{ display:flex; gap:8px; }
+  .row-actions a{ font-size:12px; }
+
+  .empty{ color:var(--muted); font-size:13px; padding:50px 10px; text-align:center; border:1px dashed var(--border); border-radius:10px; }
+</style>
+</head>
+<body>
+
+<div class="topbar">
+  <div class="topbar-left">
+    <div class="mark">SK</div>
+    <div>
+      <h1>SKU &amp; Description Generator</h1>
+      <div class="sub">Batch history</div>
+    </div>
+  </div>
+  <div class="pill">● {{ request.user.username }} — <a href="{% url 'logout' %}">Sign out</a></div>
+</div>
+
+<div class="wrap">
+  <div class="header-row">
+    <h2>Past batches</h2>
+    <a class="btn primary" href="{% url 'wizard_reset' %}">+ Start a new batch</a>
+  </div>
+
+  {% if batches %}
+  <table>
+    <thead>
+      <tr><th>Batch</th><th>Rows</th><th>Generated</th><th></th></tr>
+    </thead>
+    <tbody>
+      {% for b in batches %}
+      <tr>
+        <td class="batch">{{ b.batch_id|slice:":16" }}…</td>
+        <td class="count">{{ b.row_count }}</td>
+        <td class="date">{{ b.started|date:"d M Y, H:i" }}</td>
+        <td>
+          <div class="row-actions">
+            <a class="btn" href="{% url 'wizard_result' batch_id=b.batch_id %}">View</a>
+            <a class="btn" href="{% url 'export_excel' %}?batch={{ b.batch_id }}">⬇ Export</a>
+          </div>
+        </td>
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+  {% else %}
+    <div class="empty">No batches generated yet. Start one to see it here.</div>
+  {% endif %}
+</div>
+
+</body>
+</html>

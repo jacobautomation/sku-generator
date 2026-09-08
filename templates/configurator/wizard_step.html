@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+{% load form_extras %}
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Step {{ step_num }} of {{ total_steps }} — SKU Generator</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap');
+  :root{
+    --bg:#1c2028; --panel:#22262f; --panel-2:#2d3242; --border:#343a48;
+    --text:#e6e6e6; --muted:#9aa2b1; --accent:#4664b4; --accent-soft:rgba(70,100,180,0.16);
+    --green:#3cbe78; --red:#e08a7a;
+    --mono:'JetBrains Mono',monospace; --sans:'Inter',-apple-system,sans-serif;
+  }
+  *{box-sizing:border-box;}
+  body{ margin:0; background:var(--bg); color:var(--text); font-family:var(--sans); line-height:1.55; }
+  .topbar{ border-bottom:1px solid var(--border); padding:16px 28px; display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:10px; }
+  .topbar-left{ display:flex; align-items:center; gap:12px; }
+  .mark{ width:32px; height:32px; border:1.5px solid var(--accent); border-radius:7px; display:flex; align-items:center; justify-content:center; font-family:var(--mono); font-weight:600; font-size:13px; color:var(--accent); }
+  h1{ font-size:15px; font-weight:600; margin:0; }
+  .sub{ font-size:12.5px; color:var(--muted); margin-top:1px; }
+  .pill{ font-family:var(--mono); font-size:11.5px; color:var(--green); background:rgba(60,190,120,0.12); border:1px solid rgba(60,190,120,0.3); padding:5px 10px; border-radius:20px; }
+  .pill a{ color:inherit; }
+
+  .wrap{ max-width: 760px; margin:0 auto; padding: 26px 24px 60px; }
+
+  .progress-head{ display:flex; align-items:baseline; justify-content:space-between; margin-bottom:8px; }
+  .progress-head .step-label{ font-family:var(--mono); font-size:12px; color:var(--accent); font-weight:600; }
+  .progress-head .step-title{ font-size:12px; color:var(--muted); }
+  .progress-bar{ height:6px; background:var(--panel-2); border-radius:4px; overflow:hidden; margin-bottom:18px; }
+  .progress-fill{ height:100%; background:var(--accent); border-radius:4px; transition: width .2s; }
+
+  .tabs{ display:flex; flex-wrap:wrap; gap:6px; margin-bottom:22px; }
+  .tab{
+    font-family:var(--mono); font-size:10.5px; padding:6px 10px; border-radius:6px;
+    border:1px solid var(--border); color:var(--muted); text-decoration:none; white-space:nowrap;
+  }
+  .tab.active{ background:var(--accent); border-color:var(--accent); color:#fff; font-weight:600; }
+  .tab.done{ color: var(--green); border-color: rgba(60,190,120,0.4); }
+  .tab.locked{ opacity:0.35; pointer-events:none; }
+
+  .card{ background:var(--panel); border:1px solid var(--border); border-radius:12px; padding:24px; }
+  .card h2{ font-size:17px; margin:0 0 18px 0; font-weight:600; }
+
+  .field{ margin-bottom:16px; }
+  .field-head{ display:flex; justify-content:space-between; align-items:baseline; margin-bottom:6px; gap:10px; }
+  .field label{ font-size:12.5px; color:var(--muted); display:block; }
+  .select-all-links{ font-size:11px; white-space:nowrap; }
+  .select-all-links a{ color: var(--accent); text-decoration:none; }
+  .select-all-links a:hover{ text-decoration:underline; }
+  .field .help{ font-size:11px; color:var(--muted); margin-top:5px; }
+  .field select, .field input[type=number], .field input[type=text]{
+    background:var(--panel-2); border:1px solid var(--border); color:var(--text);
+    padding:9px 10px; border-radius:7px; font-size:13px; font-family:var(--sans); width:100%;
+  }
+  .field select:focus, .field input:focus{ outline:none; border-color:var(--accent); }
+  .field select[multiple]{ height:auto; }
+  .search-box{
+    width:100%; background:var(--panel-2); border:1px solid var(--border); color:var(--text);
+    padding:8px 10px; border-radius:7px 7px 0 0; font-size:12.5px; font-family:var(--sans);
+    border-bottom:none;
+  }
+  .search-box:focus{ outline:none; border-color:var(--accent); }
+  .search-box + select{ border-top-left-radius:0; border-top-right-radius:0; }
+
+  .field ul{ list-style:none; margin:0; padding:10px; display:flex; flex-wrap:wrap; gap:6px 16px;
+    background: var(--panel-2); border:1px solid var(--border); border-radius:8px; max-height:220px; overflow-y:auto; }
+  .field ul li{ font-size:12.5px; }
+  .field ul label{ display:flex; align-items:center; gap:6px; margin:0; color:var(--text); font-size:12.5px; }
+  .field input[type=checkbox]{ width:14px; height:14px; accent-color:var(--accent); }
+
+  .errorlist{ color:var(--red); font-size:12px; list-style:none; padding:0; margin:4px 0 0 0; }
+
+  .nav-row{ display:flex; justify-content:space-between; align-items:center; margin-top:22px; gap:10px; }
+  .btn{ padding:10px 18px; border-radius:8px; font-size:13.5px; font-weight:600; cursor:pointer; border:1px solid var(--border); background:var(--panel-2); color:var(--text); text-decoration:none; display:inline-block; }
+  .btn.primary{ background:var(--accent); border-color:var(--accent); color:#fff; }
+  .btn.primary:hover{ filter:brightness(1.1); }
+  .btn:hover{ border-color:var(--accent); }
+</style>
+</head>
+<body>
+
+<div class="topbar">
+  <div class="topbar-left">
+    <div class="mark">SK</div>
+    <div>
+      <h1>SKU &amp; Description Generator</h1>
+      <div class="sub">Web app demo &mdash; step-by-step wizard, Django backend</div>
+    </div>
+  </div>
+  <div class="pill">● {{ request.user.username }} — <a href="{% url 'wizard_history' %}">Batch history</a> · <a href="{% url 'wizard_reset' %}">Start over</a> · <a href="{% url 'logout' %}">Sign out</a></div>
+</div>
+
+<div class="wrap">
+
+  <div class="progress-head">
+    <span class="step-label">STEP {{ step_num }} OF {{ total_steps }}</span>
+    <span class="step-title">{{ title }}</span>
+  </div>
+  <div class="progress-bar"><div class="progress-fill" style="width: {% widthratio step_num total_steps 100 %}%;"></div></div>
+
+  <div class="tabs">
+    {% for s_num, slug, s_title, tab_label, form_cls in steps %}
+      {% if s_num <= max_step_reached %}
+        <a class="tab {% if s_num == step_num %}active{% elif s_num < step_num %}done{% endif %}" href="{% url 'wizard_step' step=s_num %}">{{ s_num }}. {{ tab_label }}</a>
+      {% else %}
+        <span class="tab locked">{{ s_num }}. {{ tab_label }}</span>
+      {% endif %}
+    {% endfor %}
+  </div>
+
+  <div class="card">
+    <h2>{{ title }}</h2>
+    <form method="post">
+      {% csrf_token %}
+      {% for field in form %}
+        <div class="field" data-field-name="{{ field.html_name }}">
+          <div class="field-head">
+            <label>{{ field.label }}</label>
+            {% if field.field.widget.allow_multiple_selected %}
+              <span class="select-all-links">
+                <a href="#" onclick="toggleAll('{{ field.html_name }}', true); return false;">Select all</a>
+                &middot;
+                <a href="#" onclick="toggleAll('{{ field.html_name }}', false); return false;">Clear</a>
+              </span>
+            {% endif %}
+          </div>
+          {% if field|widget_class == "SelectMultiple" %}
+            <input type="text" class="search-box" placeholder="Type to filter, e.g. LS1003…"
+                   oninput="filterSelect('{{ field.html_name }}', this.value)">
+          {% endif %}
+          {{ field }}
+          {% if field.help_text %}<div class="help">{{ field.help_text }}</div>{% endif %}
+          {% if field.errors %}<ul class="errorlist">{% for e in field.errors %}<li>{{ e }}</li>{% endfor %}</ul>{% endif %}
+        </div>
+      {% endfor %}
+
+      <div class="nav-row">
+        {% if prev_step %}
+          <a class="btn" href="{% url 'wizard_step' step=prev_step %}">← Back</a>
+        {% else %}
+          <span></span>
+        {% endif %}
+        <button type="submit" class="btn primary">{% if is_last %}Review & Generate →{% else %}Next →{% endif %}</button>
+      </div>
+    </form>
+  </div>
+
+</div>
+
+<script>
+function toggleAll(fieldName, state) {
+  var container = document.querySelector('[data-field-name="' + fieldName + '"]');
+  if (!container) return;
+  var checkboxes = container.querySelectorAll('input[type=checkbox]');
+  if (checkboxes.length) {
+    checkboxes.forEach(function(cb) { cb.checked = state; });
+    return;
+  }
+  var select = container.querySelector('select[multiple]');
+  if (select) {
+    for (var i = 0; i < select.options.length; i++) {
+      select.options[i].selected = state;
+    }
+  }
+}
+
+function filterSelect(fieldName, query) {
+  var container = document.querySelector('[data-field-name="' + fieldName + '"]');
+  if (!container) return;
+  var select = container.querySelector('select[multiple]');
+  if (!select) return;
+  var q = query.trim().toLowerCase();
+  for (var i = 0; i < select.options.length; i++) {
+    var opt = select.options[i];
+    var match = q === "" || opt.textContent.toLowerCase().indexOf(q) !== -1;
+    opt.style.display = match ? "" : "none";
+  }
+}
+</script>
+
+</body>
+</html>
