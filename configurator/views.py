@@ -291,9 +291,22 @@ def export_excel(request):
     if batch:
         qs = qs.filter(batch_id=batch)
 
+    # Name the sheet after the product prefix (e.g. "LS1003") when the
+    # batch covers a single product — matches what you'd actually be
+    # looking at. Batches spanning multiple products fall back to
+    # "Output" since a single sheet can't carry multiple names.
+    distinct_prefixes = list(
+        qs.order_by().values_list("product__prefix", flat=True).distinct()
+    )
+    if len(distinct_prefixes) == 1 and distinct_prefixes[0]:
+        invalid_chars = set(r'[]:*?/\\')
+        sheet_title = "".join(c for c in distinct_prefixes[0] if c not in invalid_chars)[:31] or "Output"
+    else:
+        sheet_title = "Output"
+
     wb = Workbook()
     ws = wb.active
-    ws.title = "Output"
+    ws.title = sheet_title
     headers = ["ItemCode", "Short Description", "DetailedDescription", "Category", "Tags", "Generated"]
     ws.append(headers)
 
