@@ -20,6 +20,9 @@
   .sub{ font-size:12.5px; color:var(--muted); margin-top:1px; }
   .pill{ font-family:var(--mono); font-size:11.5px; color:var(--green); background:rgba(60,190,120,0.12); border:1px solid rgba(60,190,120,0.3); padding:5px 10px; border-radius:20px; }
   .pill a{ color:inherit; }
+  .pill form{ display:inline; margin:0; }
+  .pill .link-btn{ background:none; border:none; color:inherit; font:inherit; padding:0; margin:0; cursor:pointer; text-decoration:none; }
+  .pill .link-btn:hover{ text-decoration:underline; }
 
   .wrap{ max-width: 980px; margin:0 auto; padding: 26px 24px 60px; }
   .header-row{ display:flex; justify-content:space-between; align-items:center; margin-bottom:18px; }
@@ -51,7 +54,7 @@
       <div class="sub">Batch history</div>
     </div>
   </div>
-  <div class="pill">● {{ request.user.username }} — <a href="{% url 'logout' %}">Sign out</a></div>
+  <div class="pill">● {{ request.user.username }} — <form method="post" action="{% url 'logout' %}">{% csrf_token %}<button type="submit" class="link-btn">Sign out</button></form></div>
 </div>
 
 <div class="wrap">
